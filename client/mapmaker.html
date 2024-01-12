@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelBomber Mapmaker</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="enter-values" id="first">
+        <div class="values">
+            <div class="value">
+                <input id="column" type="number" onchange="limiter(this);" min="0" max="30" placeholder="Sütun Sayısı">
+            </div>
+            <div class="value">
+                <input id="row" type="number" onchange="limiter(this);" min="0" max="30" placeholder="Satır Sayısı">
+            </div>
+            <div class="value">
+                <button id="creategrid" onclick="login();">OLUŞTUR</button>
+            </div>
+            <div id="errorwrapper">
+                <span id="errormsg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="mapMaker" id="second">
+        <img id="0" class="tile" title="Empty" src='img/empty.png'>
+        <img id="1" class="tile" title="Terrain" src='img/terrain.jpg'>
+        <img id="2" class="tile" title="Wall" src='img/wall.jpg'>
+        <img id="3" class="tile" title="Spawnpoint" src='img/spawnpoint.jpg'>
+        <img id="4" class="tile" title="Box" src='img/box.jpg'>
+        <div id="bottom-to-top">
+            <i class="far fa-save" onclick="map.Save();"></i>
+            <i class="fas fa-trash" onclick="map.Reset();"></i>
+        </div>
+    </div>
+    <div class="message  message--success" id="savesuccess">
+        <p>Başarıyla Kaydedildi.</p>
+    </div>
+    <script src="UPXEngine.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
